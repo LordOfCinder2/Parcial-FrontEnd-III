@@ -13,7 +13,7 @@ function App() {
 	const submitHandler = (e) => {
 		e.preventDefault()
 		if (
-			data.userName.length > 2 &&
+			data.userName.length >= 3 &&
 			data.userName === data.userName.trim() &&
 			data.day.length >= 6
 		) {
@@ -28,12 +28,11 @@ function App() {
 	const onChangeHandler = (e, prop) => {
 		setValidData(false)
 		setData({ ...data, [prop]: e.target.value })
-		console.log(data)
 	}
 
 	return (
 		<>
-			<form action="" onSubmit={submitHandler}>
+			<form onSubmit={submitHandler}>
 				<input
 					type="text"
 					onChange={(e) => onChangeHandler(e, 'userName')}
@@ -44,7 +43,7 @@ function App() {
 					onChange={(e) => onChangeHandler(e, 'day')}
 					placeholder="Escribe tu dia favorito"
 				/>
-				<button>Enviar</button>
+				<button type="submit">Enviar</button>
 			</form>
 			{showErrorMsg && (
 				<div>Por favor chequea que la información sea correcta</div>
