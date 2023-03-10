@@ -2,12 +2,7 @@ import React from 'react'
 import Card from '../Card/Card'
 
 const Form = () => {
-return (
-  <>
-    <div>Form</div>
-    <Card />
-  </>
-  )
+	return <Card />
 }
 
 export default Form
